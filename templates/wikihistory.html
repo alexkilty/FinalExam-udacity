@@ -1,0 +1,7 @@
+{% extends "wikibase.html" %}
+
+{% block content %}
+{% for post in wikipost %}
+	<p>{{post.created.strftime("%b %d, %Y")}}  |  {{post.content}}  |  <a href="/wiki/_edit?v={{post.key().id()}}">Edit</a> | <a href="/wiki?v={{post.key().id()}}">View</a></p>
+{% endfor %}
+{% endblock %}

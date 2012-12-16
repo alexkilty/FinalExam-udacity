@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Alexander Kilty's Blog</title>
+		<link rel="stylesheet" href="/static/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" type="text/css" />
+        <script type="text/javascript">
+		  function show_confirm()
+		  {
+		  confirm("Are you sure?");
+		  }
+		  </script>
+	</head>
+<body>
+<div class="top">
+{% if user %}
+	<div class="btn btn-small pull-right"> 
+    <a href="/wiki/_edit{{page}}">Edit </a> | <a href="/wiki/_history{{page}}">History </a><i class="icon-user"></i>
+    {{user.name}}
+    </div>
+{% else %}
+	<a href="/wiki/login" class="btn btn-small pull-right"><i class="icon-user"></i>Login</a>
+    <a href="/wiki/_history{{page}}" class="btn btn-small pull-right">History    </a> 
+{% endif %}
+<a class="main-title" href="/wiki">alexanderkilty::Wiki</a>
+</div>
+<div class="container">
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div class="post hero-unit">
+	<div class="post-heading">
+    	<div class="post-title">
+        	{{p.subject}}
+        </div>
+        
+        <div class="post-date">
+        	{{p.created.strftime("%b %d, %Y")}}
+        </div>
+    </div>
+    
+    
+    	<p class ="post">{{p._render_text | safe}}</p>
+    
+</div>

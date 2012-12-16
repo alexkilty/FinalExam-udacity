@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{{p.render() | safe}}
+    <p style="color:red;float:right;">queried {{ time_cached }} seconds ago</p>
+{% endblock %}
